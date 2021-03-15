@@ -29,22 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewWord"
-        android:layout_width="191dp"
-        android:layout_height="584dp"
+        android:id="@+id/recyclerViewCards"
+        android:layout_width="408dp"
+        android:layout_height="575dp"
         android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWord" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewDescription"
-        android:layout_width="190dp"
-        android:layout_height="582dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="66dp"
-        app:layout_constraintStart_toEndOf="@+id/recyclerViewWord"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTopic" />
 
     <EditText
         android:id="@+id/editTextWord"
@@ -55,7 +45,7 @@
         android:layout_marginTop="7dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Word"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTopic" />
 
@@ -65,9 +55,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="7dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Definition"
         app:layout_constraintStart_toEndOf="@+id/editTextWord"
         app:layout_constraintTop_toBottomOf="@+id/editTextTopic" />
 

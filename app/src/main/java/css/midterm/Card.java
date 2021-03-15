@@ -9,6 +9,9 @@ public class Card {
     public String word;
     public String definition;
 
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+
 
     public Card()
     {

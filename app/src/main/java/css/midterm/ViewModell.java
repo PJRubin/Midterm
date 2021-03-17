@@ -43,11 +43,11 @@ public class ViewModell extends AndroidViewModel {
     }
 
 
-    public String getOrderItem(Integer position) {
+    public String getListItem(Integer position) {
         return cardsrepo.getSingleCard(position);
     }
 
-    public Integer getOrderSize() {
+    public Integer getListSize() {
         return cardsrepo.getNumberOfCards();
     }
 

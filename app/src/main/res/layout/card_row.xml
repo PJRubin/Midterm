@@ -6,9 +6,9 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textViewWordRow"
-        android:layout_width="181dp"
-        android:layout_height="29dp"
+        android:id="@+id/textViewCard"
+        android:layout_width="383dp"
+        android:layout_height="45dp"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
         android:layout_marginTop="37dp"
@@ -16,14 +16,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewDefinitionRow"
-        android:layout_width="154dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="35dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textViewWordRow"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

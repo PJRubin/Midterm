@@ -68,5 +68,15 @@ public class CardRepository{
         return currentCards.size();
     }
 
+    public String getWord(Integer position)
+    {
+        return currentCards.get(position).getWord();
+    }
+
+    public String getDefinition(Integer position)
+    {
+        return currentCards.get(position).getDefinition();
+    }
+
 
 }

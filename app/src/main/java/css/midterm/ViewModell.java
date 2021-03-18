@@ -52,6 +52,15 @@ public class ViewModell extends AndroidViewModel implements Serializable {
         return cardsrepo.getNumberOfCards();
     }
 
+    public String getWord(Integer position)
+    {
+        return cardsrepo.getWord(position);
+    }
+
+    public String getDefinition(Integer position)
+    {
+        return cardsrepo.getDefinition(position);
+    }
 
 
 }

@@ -73,29 +73,21 @@ public class CardsActivity extends AppCompatActivity {
         bFlip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = getWord();
-                if(tvTerm.getText().equals(getWord()))
+
+                if(tvTerm.getText().equals(viewModell.getWord(position)))
                 {
-                    tvTerm.setText(getDef());
+                    tvTerm.setText(viewModell.getDefinition(position));
                 }
                 else
                 {
-                    tvTerm.setText(getWord());
+                    tvTerm.setText(viewModell.getWord(position));
                 }
 
             }
         });
     }
 
-    public String getWord()
-    {
-        return viewModell.getListItem(position).getWord();
-    }
 
-    public String getDef()
-    {
-        return viewModell.getListItem(position).getDefinition();
-    }
 
 
 }

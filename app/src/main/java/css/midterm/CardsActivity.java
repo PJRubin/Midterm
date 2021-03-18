@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,8 +14,8 @@ import java.util.ArrayList;
 public class CardsActivity extends AppCompatActivity {
 
     ViewModell viewModell;
-    TextView tvWord;
-    TextView tvDef;
+    TextView tvTerm;
+
     Button bFlip;
     Button bNext;
     Button bPrevious;
@@ -22,6 +23,7 @@ public class CardsActivity extends AppCompatActivity {
     EditText etDate;
     EditText etTime;
     Button bCalendar;
+    int position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,8 @@ public class CardsActivity extends AppCompatActivity {
 
 
 
-        tvWord = findViewById(R.id.textViewWord);
-        tvDef = findViewById(R.id.textViewDefinition);
+        tvTerm = findViewById(R.id.textViewTerm);
+
         bFlip = findViewById(R.id.buttonFlip);
         bNext = findViewById(R.id.buttonNext);
         bPrevious = findViewById(R.id.buttonPrevious);
@@ -57,7 +59,7 @@ public class CardsActivity extends AppCompatActivity {
         bCalendar = findViewById(R.id.buttonCalendar);
 
         //set up initial word
-        tvWord.setText(viewModell.getListItem(0).getWord());
+        tvTerm.setText(viewModell.getListItem(0).getWord());
 
         setButtonFlip();
 
@@ -68,6 +70,31 @@ public class CardsActivity extends AppCompatActivity {
     }
 
     public void setButtonFlip() {
+        bFlip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = getWord();
+                if(tvTerm.getText().equals(getWord()))
+                {
+                    tvTerm.setText(getDef());
+                }
+                else
+                {
+                    tvTerm.setText(getWord());
+                }
+
+            }
+        });
+    }
+
+    public String getWord()
+    {
+        return viewModell.getListItem(position).getWord();
+    }
+
+    public String getDef()
+    {
+        return viewModell.getListItem(position).getDefinition();
     }
 
 

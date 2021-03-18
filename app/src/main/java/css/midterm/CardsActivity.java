@@ -24,6 +24,10 @@ public class CardsActivity extends AppCompatActivity {
     EditText etTime;
     Button bCalendar;
     int position = 0;
+    int min = 0;
+    int max = 0;
+    String topic;
+    TextView tvTopic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,11 @@ public class CardsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         ArrayList<String> words = extras.getStringArrayList("Words");
         ArrayList<String> defs = extras.getStringArrayList("Defs");
+
+        topic = extras.getString("Topic");
+        tvTopic = findViewById(R.id.textViewTopic);
+        tvTopic.setText(topic);
+
 
         for(int i = 0; i < words.size(); i++)
         {
@@ -61,7 +70,14 @@ public class CardsActivity extends AppCompatActivity {
         //set up initial word
         tvTerm.setText(viewModell.getListItem(0).getWord());
 
+        //set up the max
+        max = viewModell.getListSize() - 1;
+
         setButtonFlip();
+        setButtonNext();
+        setButtonPrevious();
+        setButtonRandom();
+
 
 
 
@@ -83,6 +99,45 @@ public class CardsActivity extends AppCompatActivity {
                     tvTerm.setText(viewModell.getWord(position));
                 }
 
+            }
+        });
+    }
+
+    public void setButtonNext()
+    {
+        bNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(position < max) {
+                    position++;
+                    tvTerm.setText(viewModell.getWord(position));
+                }
+            }
+        });
+    }
+
+    public void setButtonPrevious()
+    {
+        bPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(position > min) {
+                    position--;
+                    tvTerm.setText(viewModell.getWord(position));
+                }
+
+            }
+        });
+    }
+
+    public void setButtonRandom()
+    {
+        bRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModell.randomize();
+                position = 0;
+                tvTerm.setText(viewModell.getWord(position));
             }
         });
     }

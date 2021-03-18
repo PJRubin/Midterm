@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvCards;
     CardAdapter cardAdapter;
     ViewModell viewModell;
+    String topic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
         setButtonAdd();
         setButtonDone();
+
+
 
 
     }
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 ArrayList<String> words = new ArrayList<>();
                 ArrayList<String> defs = new ArrayList<>();
+                topic = etTopic.getText().toString();
 
 
                 for(int i = 0; i < viewModell.getListSize(); i++)
@@ -106,17 +110,10 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-
-
-
-
-
-
-
-
                 Intent secondIntent = new Intent(v.getContext(), CardsActivity.class);
                 secondIntent.putExtra("Words", words);
                 secondIntent.putExtra("Defs", defs);
+                secondIntent.putExtra("Topic", topic);
                 startActivityForResult(secondIntent, 1001);
 
             }

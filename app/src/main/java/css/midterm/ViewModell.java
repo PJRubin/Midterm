@@ -62,5 +62,10 @@ public class ViewModell extends AndroidViewModel implements Serializable {
         return cardsrepo.getDefinition(position);
     }
 
+    public void randomize()
+    {
+        cardsrepo.randomize();
+    }
+
 
 }

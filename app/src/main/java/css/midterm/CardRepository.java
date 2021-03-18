@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CardRepository{
@@ -76,6 +77,11 @@ public class CardRepository{
     public String getDefinition(Integer position)
     {
         return currentCards.get(position).getDefinition();
+    }
+
+    public void randomize()
+    {
+        Collections.shuffle(currentCards);
     }
 
 

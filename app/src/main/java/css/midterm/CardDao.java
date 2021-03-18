@@ -6,10 +6,11 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Dao
-public interface CardDao {
+public interface CardDao{
     @Query("SELECT * FROM Card")
     List<Card> getAll();
 

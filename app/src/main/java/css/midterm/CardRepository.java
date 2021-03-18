@@ -6,10 +6,11 @@ import android.app.Application;
 import android.os.Handler;
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardRepository {
+public class CardRepository{
 
     private CardDao cardDao;
     private List<Card> currentCards;          // list of Cards so far
@@ -58,12 +59,12 @@ public class CardRepository {
      * Retrieve one item from the list
      * @return a list of Cards, each one describe by a single string
      */
-    public String getSingleCard(Integer position) {
+    public Card getSingleCard(Integer position) {
         Card currentCard = currentCards.get(position);
-        return currentCard.toString();
+        return currentCard;
     }
 
-    public Integer getNumberOfCards() {
+    public int getNumberOfCards() {
         return currentCards.size();
     }
 

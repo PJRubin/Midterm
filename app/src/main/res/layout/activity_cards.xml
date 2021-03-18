@@ -40,35 +40,35 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewDefinition" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="313dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="27dp"
+        android:id="@+id/buttonNext"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
         android:text="Next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonFlip" />
 
     <Button
         android:id="@+id/buttonPrevious"
-        android:layout_width="304dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="9dp"
+        android:layout_width="155dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="20dp"
         android:text="Previous"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/buttonNext"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFlip" />
 
     <Button
         android:id="@+id/buttonRandom"
         android:layout_width="305dp"
         android:layout_height="53dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
         android:text="Random"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPrevious" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

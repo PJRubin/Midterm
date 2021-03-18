@@ -15,9 +15,10 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ViewModell extends AndroidViewModel {
+public class ViewModell extends AndroidViewModel implements Serializable {
 
 
     CardRepository cardsrepo;
@@ -43,11 +44,11 @@ public class ViewModell extends AndroidViewModel {
     }
 
 
-    public String getListItem(Integer position) {
+    public Card getListItem(Integer position) {
         return cardsrepo.getSingleCard(position);
     }
 
-    public Integer getListSize() {
+    public int getListSize() {
         return cardsrepo.getNumberOfCards();
     }
 

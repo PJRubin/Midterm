@@ -1,6 +1,8 @@
 package css.midterm;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,6 +28,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.android.material.chip.Chip;
+
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         rvCards.setLayoutManager(new LinearLayoutManager(this));
 
         setButtonAdd();
+        setButtonDone();
+
 
     }
 
@@ -84,7 +92,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+                ArrayList<String> words = new ArrayList<>();
+                ArrayList<String> defs = new ArrayList<>();
+
+
+                for(int i = 0; i < viewModell.getListSize(); i++)
+                {
+                    words.add( viewModell.getListItem(i).getWord());
+                    defs.add(viewModell.getListItem(i).getDefinition());
+                    Log.d("CIS 3334","This should display a lot");
+
+                }
+
+
+
+
+
+
+
+                Intent secondIntent = new Intent(v.getContext(), CardsActivity.class);
+                secondIntent.putExtra("Words", words);
+                secondIntent.putExtra("Defs", defs);
+                startActivityForResult(secondIntent, 1001);
+
             }
         });
     }
+
+
 }

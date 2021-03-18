@@ -33,8 +33,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
 
-        String currentCard = v.getListItem(position);
-        holder.tvCard.setText(currentCard);
+        Card currentCard = v.getListItem(position);
+        holder.tvCard.setText(currentCard.toString());
 
     }
 

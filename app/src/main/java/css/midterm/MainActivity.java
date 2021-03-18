@@ -112,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
                 Intent secondIntent = new Intent(v.getContext(), CardsActivity.class);
                 secondIntent.putExtra("Words", words);
                 secondIntent.putExtra("Defs", defs);

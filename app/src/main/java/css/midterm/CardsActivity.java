@@ -1,9 +1,11 @@
 package css.midterm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,11 +19,16 @@ public class CardsActivity extends AppCompatActivity {
     Button bNext;
     Button bPrevious;
     Button bRandom;
+    EditText etDate;
+    EditText etTime;
+    Button bCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
+
+        viewModell = new ViewModelProvider(this).get(ViewModell.class);
 
         Bundle extras = getIntent().getExtras();
         ArrayList<String> words = extras.getStringArrayList("Words");
@@ -32,6 +39,12 @@ public class CardsActivity extends AppCompatActivity {
             viewModell.addToList(words.get(i), defs.get(i));
         }
 
+
+
+
+
+
+
         tvWord = findViewById(R.id.textViewWord);
         tvDef = findViewById(R.id.textViewDefinition);
         bFlip = findViewById(R.id.buttonFlip);
@@ -39,10 +52,23 @@ public class CardsActivity extends AppCompatActivity {
         bPrevious = findViewById(R.id.buttonPrevious);
         bRandom = findViewById(R.id.buttonRandom);
 
+        etDate = findViewById(R.id.editTextDate);
+        etTime = findViewById(R.id.editTextTime);
+        bCalendar = findViewById(R.id.buttonCalendar);
+
+        //set up initial word
+        tvWord.setText(viewModell.getListItem(0).getWord());
+
+        setButtonFlip();
 
 
 
 
 
     }
+
+    public void setButtonFlip() {
+    }
+
+
 }

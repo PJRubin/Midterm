@@ -24,7 +24,13 @@ public class CardRepository{
     CardRepository(Application application) {
         CardDatabase db = CardDatabase.getDatabase(application);
         cardDao = db.cardDao();
-        currentCards = new ArrayList<Card>();
+        //currentCards = new ArrayList<Card>();
+
+        currentCards = this.getList();
+        if(currentCards == null)
+        {
+            currentCards = new ArrayList<Card>();
+        }
     }
 
     /***
@@ -45,15 +51,13 @@ public class CardRepository{
      * Retrieve the full list
      * @return a list of Cards, each one describe by a single string
      */
-    public List<String> getList() {
+    public List<Card> getList() {
         CardDatabase.databaseWriteExecutor.execute(() -> {
-            currentCards = cardDao.getAll();              // ROOM - add this
+            //cardDao.deleteAll();               // if database is currupted delete all the rows
+            currentCards = cardDao.getAll();
+            //Log.d("CIS 3334", "HeartrateRepository: Heartrates retreived = "+allHeartrates.size());
         });
-        ArrayList<String> strCards = new ArrayList<String>();
-        for (Card c:currentCards ){
-            strCards.add(c.toString());
-        }
-        return strCards;
+        return currentCards;
     }
 
     /***

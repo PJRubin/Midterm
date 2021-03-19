@@ -10,10 +10,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
         android:layout_marginTop="19dp"
-        android:text="What is the topic of your cards?"
+        android:text="@string/what_is_the_topic_of_your_cards"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,10 +20,11 @@
         android:id="@+id/editTextTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/topic"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -41,12 +41,14 @@
         android:id="@+id/editTextWord"
         android:layout_width="155dp"
         android:layout_height="45dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="7dp"
         android:ems="10"
+        android:hint="@string/word"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="Word"
+        android:text="@string/word"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTopic" />
 
@@ -57,20 +59,25 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
+        android:hint="@string/definition"
         android:inputType="textPersonName"
-        android:text="Definition"
+        android:text="@string/definition"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextWord"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTopic" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTopic"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/buttonAdd"
         android:layout_width="132dp"
         android:layout_height="52dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="3dp"
-        android:text="Add"
+        android:text="@string/add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWord" />
 
@@ -78,11 +85,11 @@
         android:id="@+id/buttonDone"
         android:layout_width="163dp"
         android:layout_height="53dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="1dp"
-        android:text="Done"
-        app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/done"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDefinition" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

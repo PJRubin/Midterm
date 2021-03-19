@@ -97,22 +97,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                ArrayList<String> words = new ArrayList<>();
-                ArrayList<String> defs = new ArrayList<>();
+                //ArrayList<String> words = new ArrayList<>();
+                //ArrayList<String> defs = new ArrayList<>();
                 topic = etTopic.getText().toString();
 
-
+/*
                 for(int i = 0; i < viewModell.getListSize(); i++)
                 {
-                    words.add( viewModell.getListItem(i).getWord());
+                    words.add(viewModell.getListItem(i).getWord());
                     defs.add(viewModell.getListItem(i).getDefinition());
                     Log.d("CIS 3334","This should display a lot");
 
                 }
 
+ */
+
                 Intent secondIntent = new Intent(v.getContext(), CardsActivity.class);
-                secondIntent.putExtra("Words", words);
-                secondIntent.putExtra("Defs", defs);
+                //secondIntent.putExtra("Words", words);
+                //secondIntent.putExtra("Defs", defs);
                 secondIntent.putExtra("Topic", topic);
                 startActivityForResult(secondIntent, 1001);
 
